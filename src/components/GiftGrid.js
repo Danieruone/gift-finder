@@ -8,7 +8,7 @@ export const GiftGrid = ({ category }) => {
   const { data: images, loading } = useFetchGifs(category);
 
   return (
-    <div>
+    <div className="gift-grid-container">
       <h3>{category}</h3>
       <div className="gift-grid">
         {loading ? (
@@ -19,7 +19,6 @@ export const GiftGrid = ({ category }) => {
           })
         )}
       </div>
-      <hr />
     </div>
   );
 };

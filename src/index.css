@@ -8,21 +8,47 @@ body {
 }
 
 body {
-  padding: 20px;
+  padding: 5%;
 }
 
-input {
-  width: 50%;
+.top-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-form {
+  display: flex;
+  align-items: center;
+}
+
+.top-form input {
+  width: auto;
   padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #726bf9;
-  color: white;
-  margin: 20px 20px 20px 0;
+  border: 0.1 px solid gray;
+  font-size: 20px;
+  margin: 20px 20px 20px 20px;
 }
 
-input::placeholder {
-  color: white;
+.top-form input::placeholder {
+  font-size: 15px;
+  text-align: center;
+}
+
+.top-form button {
+  padding: 7px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.gift-grid-container {
+  border-bottom: 0.1px solid gray;
+  padding: 20px 0 40px 0;
+}
+
+.gift-grid-container:last-child {
+  border-bottom: none;
 }
 
 .gift-grid {
@@ -38,6 +64,9 @@ input::placeholder {
   justify-content: center;
   margin: 20px;
   width: 300px;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px 0px #e6dcdc;
+  padding-bottom: 10px;
 }
 
 .grid-item p {
@@ -49,4 +78,65 @@ input::placeholder {
 .grid-item div img {
   width: 200px;
   height: 100px;
+}
+
+/* writer */
+
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+@media (max-width: 600px) {
+  .typewriter h1 {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    font-size: 20px;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  .top-form input {
+    width: auto;
+    padding: 10px;
+    border: 0.1 px solid gray;
+    font-size: 15px;
+    margin: 20px 20px 20px 20px;
+  }
+
+  .top-form input::placeholder {
+    font-size: 10px;
+    text-align: center;
+  }
+
+  .top-form button {
+    padding: 8px;
+    font-size: 15px;
+    cursor: pointer;
+  }
 }
