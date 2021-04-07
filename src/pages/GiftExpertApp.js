@@ -7,9 +7,12 @@ export const GiftExpertApp = () => {
   const [categories, setCategories] = useState(["The big bang theory"]);
   return (
     <div>
-      <h2>Gift expert app</h2>
-      <AddCategory setCategories={setCategories} categories={categories} />
-      <hr />
+      <div className="top-container">
+        <div className="typewriter">
+          <h1>The best gift finder...</h1>
+        </div>
+        <AddCategory setCategories={setCategories} categories={categories} />
+      </div>
 
       {categories.map((category, idx) => (
         <GiftGrid key={idx} category={category} />

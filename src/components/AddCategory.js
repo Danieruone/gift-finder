@@ -10,18 +10,21 @@ export const AddCategory = ({ setCategories }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCategories((category) => [...category, inputValue]);
-    return setInputValue("");
+    if (inputValue.trim().length > 1) {
+      setCategories((category) => [inputValue, ...category]);
+      return setInputValue("");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="top-form">
       <input
-        placeholder="look for your awesome gift"
+        placeholder="look for your awesome gift..."
         type="text"
         onChange={handleChange}
         value={inputValue}
       ></input>
+      <button type="submit">🔎</button>
     </form>
   );
 };
