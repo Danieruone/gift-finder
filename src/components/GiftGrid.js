@@ -12,7 +12,7 @@ export const GiftGrid = ({ category }) => {
       <h3>{category}</h3>
       <div className="gift-grid">
         {loading ? (
-          <p>Cargando...</p>
+          <p>Loading...</p>
         ) : (
           images.map((img) => {
             return <GiftGridItem key={img.id} {...img} />;
